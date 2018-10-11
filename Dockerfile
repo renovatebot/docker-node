@@ -1,4 +1,6 @@
-FROM renovate/base@sha256:48598e8d78692aa114e1f5e4b2320cd761374ab177a526a005ddc569ef9d3785
+FROM renovate/base
+
+USER root
 
 RUN apt-get update && apt-get install -y gpg curl xz-utils git openssh-client && apt-get clean -y
 
@@ -46,3 +48,4 @@ CMD [ "node" ]
 
 # END copy
 
+USER ubuntu
