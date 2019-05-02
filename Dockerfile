@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y gpg curl xz-utils git openssh-client &&
 
 # START copy from https://github.com/nodejs/docker-node/blob/master/10/jessie/Dockerfile
 
-ENV NODE_VERSION 10.15.0
+ENV NODE_VERSION 10.15.3
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
@@ -44,6 +44,10 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && tar -xJf "node-v$NODE_VERSION-linux-$ARCH.tar.xz" -C /usr/local --strip-components=1 --no-same-owner \
   && rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
+
+ENV NPM_VERSION 6.9.0
+
+RUN npm install -g npm@$NPM_VERSION
 
 CMD [ "node" ]
 
