@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y gpg curl xz-utils git openssh-client &&
 
 # START copy from https://github.com/nodejs/docker-node/blob/master/12/buster/Dockerfile
 
-ENV NODE_VERSION 12.13.0
+ENV NODE_VERSION 12.16.0
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
@@ -47,7 +47,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
 
 # END copy
 
-ENV NPM_VERSION 6.12.0
+ENV NPM_VERSION 6.13.7
 
 RUN npm install -g npm@$NPM_VERSION
 
