@@ -10,12 +10,6 @@ RUN apt-get install -y nodejs
 
 RUN node --version
 
-ENV NPM_VERSION 6.13.7
-
-RUN npm install -g npm@$NPM_VERSION
-
-RUN npm --version
+USER ubuntu
 
 CMD [ "node" ]
-
-USER ubuntu
