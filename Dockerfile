@@ -6,9 +6,11 @@ RUN apt-get update && apt-get install -y gpg curl xz-utils git openssh-client gp
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 
-RUN apt-get install -y nodejs
+RUN apt-get install -y nodejs &&\
+    npm install -g npm@latest
 
 RUN node --version
+RUN npm --version
 
 USER ubuntu
 
