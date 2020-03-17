@@ -4,8 +4,11 @@ USER root
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 
+# renovate: datasource=npm depName=npm
+ENV NPM_VERSION 6.14.2
+
 RUN apt-get install -y nodejs &&\
-    npm install -g npm@latest
+    npm install -g npm@${NPM_VERSION}
 
 RUN node --version
 RUN npm --version
