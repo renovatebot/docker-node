@@ -8,7 +8,8 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 ENV NPM_VERSION 6.14.2
 
 RUN apt-get install -y nodejs &&\
-    npm install -g npm@${NPM_VERSION}
+    npm install -g npm@${NPM_VERSION} &&\
+    chown -R ubunut:0 /home/ubuntu/.config
 
 RUN node --version
 RUN npm --version
