@@ -9,7 +9,7 @@ ENV NPM_VERSION 6.14.2
 
 RUN apt-get install -y nodejs &&\
     npm install -g npm@${NPM_VERSION} &&\
-    chown -R ubunut:0 /home/ubuntu/.config
+    chown -R ubuntu:0 /home/ubuntu/.config
 
 RUN node --version
 RUN npm --version
