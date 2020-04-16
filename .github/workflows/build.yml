@@ -10,6 +10,8 @@ env:
   BUILDX_VERSION: v0.3.1
   # https://github.com/chalk/supports-color/issues/106
   FORCE_COLOR: true
+  FULL_IMAGE: renovate/${DOCKER_IMAGE}
+  CACHE_IMAGE: renovate/${DOCKER_CACHE}:${DOCKER_IMAGE}
 
 jobs:
   cleanup:
@@ -34,8 +36,6 @@ jobs:
     timeout-minutes: 60
 
     env:
-      FULL_IMAGE: renovate/${{ env.DOCKER_IMAGE }}
-      CACHE_IMAGE: renovate/${{ env.DOCKER_CACHE }}:${{ env.DOCKER_IMAGE }}
       VERSION: ${{ matrix.node-version }}
       TAGS: ${{ matrix.node-version }}
 
