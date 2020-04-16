@@ -6,12 +6,12 @@ env:
   PLATFORM: linux/amd64
   DOCKER_IMAGE: node
   DOCKER_CACHE: docker-build-cache
+  FULL_IMAGE: renovate/node
+  CACHE_IMAGE: renovate/docker-build-cache:node
   LATEST_VERSION: 12
   BUILDX_VERSION: v0.3.1
   # https://github.com/chalk/supports-color/issues/106
   FORCE_COLOR: true
-  FULL_IMAGE: renovate/${DOCKER_IMAGE}
-  CACHE_IMAGE: renovate/${DOCKER_CACHE}:${DOCKER_IMAGE}
 
 jobs:
   cleanup:
