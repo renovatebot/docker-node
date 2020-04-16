@@ -61,6 +61,7 @@ jobs:
             --tag ${FULL_IMAGE}:${VERSION} \
             ${CACHE_TO} \
             --cache-from=${CACHE_IMAGE}-${VERSION} \
+            .
 
       - name: latest
         if: env.VERSION == env.LATEST_VERSION
