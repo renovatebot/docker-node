@@ -1,18 +1,13 @@
-FROM renovate/base@sha256:d694b03ba0df63ac9b27445e76657d4ed62898d721b997372aab150ee84e07a1
+FROM renovate/buildpack
 
-USER root
+# renovate: datasource=github-tags depName=nodejs/node versioning=node
+ARG DUMMY=12.16.2
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
+ARG NODE_VERSION=12
 
-# renovate: datasource=npm depName=npm
-ENV NPM_VERSION 6.14.2
+LABEL org.opencontainers.image.source="https://github.com/renovatebot/docker-node" \
+      org.opencontainers.image.version="${NODE_VERSION}"
 
-RUN apt-get install -y nodejs &&\
-    npm install -g npm@${NPM_VERSION}
 
-RUN node --version
-RUN npm --version
+RUN /usr/local/build/node.sh
 
-USER 1000
-
-CMD [ "node" ]
