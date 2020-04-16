@@ -1,0 +1,9 @@
+{
+  "datasource": "github-tags",
+  "depName": "nodejs/node",
+  "versioning": "node",
+  "startVersion": "10",
+  "cache": "docker-build-cache",
+  "latestVersion": "12",
+  "versions": ["10", "12"]
+}
