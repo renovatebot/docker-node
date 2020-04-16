@@ -65,7 +65,7 @@ jobs:
 
       - name: latest
         if: env.VERSION == env.LATEST_VERSION
-        run:
+        run: |
           docker tag ${FULL_IMAGE}:${VERSION} ${FULL_IMAGE}:latest
           echo "::set-env name=TAGS::latest;${TAGS}"
 
