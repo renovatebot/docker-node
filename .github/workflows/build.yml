@@ -3,12 +3,6 @@ name: build
 on: [push, pull_request]
 
 env:
-  PLATFORM: linux/amd64
-  DOCKER_IMAGE: node
-  DOCKER_CACHE: docker-build-cache
-  FULL_IMAGE: renovate/node
-  CACHE_IMAGE: renovate/docker-build-cache:node
-  LATEST_VERSION: 12
   BUILDX_VERSION: v0.3.1
   # https://github.com/chalk/supports-color/issues/106
   FORCE_COLOR: true
@@ -29,15 +23,8 @@ jobs:
   build:
     needs: [cleanup]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12]
 
     timeout-minutes: 60
-
-    env:
-      VERSION: ${{ matrix.node-version }}
-      TAGS: ${{ matrix.node-version }}
 
     steps:
       - name: Set up Docker Buildx ${{ env.BUILDX_VERSION }}
@@ -50,32 +37,9 @@ jobs:
       - name: Docker registry login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
-      - name: Set cache_to
-        if: github.ref == 'refs/heads/master'
-        run: echo "::set-env name=CACHE_TO::--cache-to=type=registry,ref=${CACHE_IMAGE}-${VERSION},mode=max"
-      - name: Build the Docker images
-        run: |
-          docker buildx build \
-            --load \
-            --build-arg NODE_VERSION=${VERSION} \
-            --tag ${FULL_IMAGE}:${VERSION} \
-            ${CACHE_TO} \
-            --cache-from=${CACHE_IMAGE}-${VERSION} \
-            .
-
-      - name: latest
-        if: env.VERSION == env.LATEST_VERSION
-        run: |
-          docker tag ${FULL_IMAGE}:${VERSION} ${FULL_IMAGE}:latest
-          echo "::set-env name=TAGS::latest;${TAGS}"
-
-      - name: Test the Docker images
-        run: docker run --rm -t ${FULL_IMAGE}:${VERSION} node --version
-
-      - name: Publish
+      - name: Build and Publish
         uses: renovatebot/internal-tools@v0
         with:
-          command: "docker-publish"
+          command: "docker-builder"
           image: ${{ env.DOCKER_IMAGE }}
-          tags: ${{ env.TAGS }}
-          dry-run: ${{ github.ref != 'refs/heads/master' }}
+          dry-run: ${{github.ref != 'refs/heads/master'}}
