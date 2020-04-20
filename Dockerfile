@@ -1,15 +1,11 @@
-FROM renovate/buildpack@sha256:1b937dcd416efb84b7be53b050d883bcfdf2f925ab81fd38211f0d75cb235186
+FROM renovate/buildpack:1@sha256:7e28ef186596dc293af15d6c63febf1e424c3e832702864944b498b3050cac52
 
 # renovate: datasource=github-tags depName=nodejs/node versioning=node
-ARG DUMMY=12.16.2
-
-# renovate: datasource=docker depName=node versioning=docker
-ARG NODE_VERSION=12
-ENV NODE_VERSION=${NODE_VERSION}
+ARG NODE_VERSION=12.16.2
+RUN install-tool node
 
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/docker-node" \
       org.opencontainers.image.version="${NODE_VERSION}"
 
 
-RUN /usr/local/build/node.sh
-
+USER 1000
