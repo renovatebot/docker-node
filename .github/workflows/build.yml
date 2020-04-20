@@ -3,7 +3,6 @@ name: build
 on: [push, pull_request]
 
 env:
-  DOCKER_IMAGE: node
   BUILDX_VERSION: v0.3.1
   # https://github.com/chalk/supports-color/issues/106
   FORCE_COLOR: true
@@ -42,5 +41,4 @@ jobs:
         uses: renovatebot/internal-tools@v0
         with:
           command: "docker-builder"
-          image: ${{ env.DOCKER_IMAGE }}
           dry-run: ${{github.ref != 'refs/heads/master'}}

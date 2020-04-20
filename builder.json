@@ -1,8 +1,6 @@
 {
-  "datasource": "docker",
-  "versioning": "docker",
+  "image": "node",
   "startVersion": "12",
   "cache": "docker-build-cache",
-  "latestVersion": "12",
   "ignoredVersions": ["13"]
 }
