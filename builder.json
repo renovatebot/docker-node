@@ -1,6 +1,6 @@
 {
   "image": "node",
-  "startVersion": "12",
+  "startVersion": "12.16.2",
   "cache": "docker-build-cache",
   "ignoredVersions": ["13"]
 }
