@@ -1,4 +1,4 @@
-FROM renovate/buildpack@sha256:f578b330f5f5c65d63de1d09d2e22f4a8cdaff18e91fe76e8fe89c4ed70f0a32
+FROM renovate/buildpack@sha256:1b937dcd416efb84b7be53b050d883bcfdf2f925ab81fd38211f0d75cb235186
 
 # renovate: datasource=github-tags depName=nodejs/node versioning=node
 ARG DUMMY=12.16.2
