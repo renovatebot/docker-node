@@ -1,6 +1,6 @@
 FROM renovate/buildpack:2-node@sha256:5972cd297dca735bbb52a34c1115834efd2cd2e8da7e03fd1e560dad5b994624
 
-# renovate: datasource=npm depName=node versioning=node
+# renovate: datasource=npm depName=node
 ARG NODE_VERSION=12.16.2
 RUN install-tool node
 
