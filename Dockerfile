@@ -1,4 +1,4 @@
-# renovate: datasource=github-tags depName=nodejs/node
+# renovate: datasource=docker depName=node
 ARG NODE_VERSION=12.17.0
 
 FROM renovate/buildpack:2-node@sha256:d2eaa8d410c0afefcf70b13adfc01d746bec3dd1f02729cb0eaeffc7d83a792c
