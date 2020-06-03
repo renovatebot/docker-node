@@ -1,5 +1,5 @@
 {
   "image": "node",
-  "startVersion": "12.16.0",
+  "startVersion": "8.9.0",
   "cache": "docker-build-cache"
 }
