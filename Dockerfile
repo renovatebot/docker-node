@@ -1,7 +1,7 @@
 # renovate: datasource=docker depName=node
 ARG NODE_VERSION=12.18.3
 
-FROM renovate/buildpack:2-node@sha256:65f54f2e4d101727b9215360a2009ef1e037b3d7b88861ed2a0842bf9eef8201
+FROM renovate/buildpack:2-node@sha256:126c20a6f6fcb49da0ecace0dad0d83808384b08c3d43b7deaf5aad1a1635442
 
 
 ARG NODE_VERSION
