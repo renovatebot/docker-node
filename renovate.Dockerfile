@@ -1,6 +1,6 @@
 # renovate rebuild trigger
 
-FROM node:12.20.0@sha256:38affdcd0da66f87a227ff84da8af8d00ae6ca696f805ecc915533bbf29d9143
+FROM node:12.20.1@sha256:31e00bc1076b790a5110563fcb5b51291cce2aef6fdf092fee1b44885f4bc5d3
 
 FROM node:14.15.3@sha256:bac289a6f393990e759c672d5f567553c697255d1fb858e2c62d086a2dfae44a
 
