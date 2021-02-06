@@ -10,7 +10,7 @@ ARG FLAVOR=
 # renovate: datasource=docker depName=node
 ARG NODE_VERSION=14.15.4
 
-FROM renovate/buildpack:2-node@sha256:25254e8bb0245e3dced5b05623b233fe7c875462d46e7d3e827aa06103d148fb
+FROM renovate/buildpack:3-node@sha256:b937c533139d468a1561eb1da587e8fdb3eb32c0df5673516f59b19ca4077796
 
 #--------------------------------------
 # Image: final
