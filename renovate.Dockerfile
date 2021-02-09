@@ -1,6 +1,6 @@
 # renovate rebuild trigger
 
-FROM amd64/node:12.20.1@sha256:b7d5b3ae1888027a6f5c64331455dea2c7695a96284b01a508a8b90daa4dcb04
+FROM amd64/node:12.20.1@sha256:98ad7a4a0b51580156635a12ce2e3fd07b7021fe54de20f80813018e18da4446
 
 FROM amd64/node:14.15.4@sha256:9cecef6e609d446d59bd82dac5b40df785e95adb395cf22cdefc76bd4663194e
 
