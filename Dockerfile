@@ -1,7 +1,7 @@
 # renovate: datasource=docker depName=node
 ARG NODE_VERSION=14.16.1
 
-FROM renovate/buildpack:4-node@sha256:01990a099b8e3bd1fb9de4b760d78f9836549f3f02ac16f45d3a8170ac78eb3f
+FROM renovate/buildpack:5-node@sha256:2fc4ac216b459ace40068b0e2bc25bec336cbf1315e7332bbe066b64db8e4ad7
 
 ARG NODE_VERSION
 RUN install-tool node
