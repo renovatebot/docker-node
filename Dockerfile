@@ -1,5 +1,5 @@
 # renovate: datasource=npm depName=node versioning=node
-ARG NODE_VERSION=14.17.0
+ARG NODE_VERSION=14.17.1
 
 FROM renovate/buildpack:5-node@sha256:e384a27a172d791ccb436e012b728c65ffd1bd5871725fdaf96f3194e2bc195c
 
