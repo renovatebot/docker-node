@@ -3,9 +3,13 @@
   "extends": ["github>renovatebot/presets-internal:docker-images"],
   "packageRules": [
     {
-      "paths": ["+(renovate.Dockerfile)"],
-      "updateTypes": ["major"],
+      "matchPaths": ["+(renovate.Dockerfile)"],
+      "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "matchPackageNames": ["node", "amd64/node"],
+      "versioning": ["node"]
     }
   ]
 }
