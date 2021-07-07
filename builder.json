@@ -2,6 +2,5 @@
   "image": "node",
   "versioning": "semver",
   "startVersion": "12.16.0",
-  "cache": "docker-build-cache",
-  "maxVersions": 50
+  "cache": "docker-build-cache"
 }
