@@ -1,7 +1,7 @@
 # renovate: datasource=node depName=node
 ARG NODE_VERSION=v14.18.0
 
-FROM renovate/buildpack:5-node@sha256:886267a7961cdb841c8d87a217aceebeea603bbd500402a86f1347d7fb50728e
+FROM renovate/buildpack:5-node@sha256:55f53150eba1160c5892d853ad384c1cab67d3165b2ada711f6941d383cadf6c
 
 ARG NODE_VERSION
 RUN install-tool node
