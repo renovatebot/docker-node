@@ -1,5 +1,5 @@
 # renovate: datasource=node depName=node versioning=node
-ARG NODE_VERSION=14.19.0
+ARG NODE_VERSION=16.13.2
 
 FROM renovate/buildpack:6@sha256:f8f23f178cb2ddc34519685850658a3598288b5cc526de2c56699b28c3169a17
 
