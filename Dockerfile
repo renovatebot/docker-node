@@ -10,6 +10,6 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/docker-nod
       org.opencontainers.image.version="${NODE_VERSION}"
 
 # workaround for old renovate
-RUN ln -sf /home/user /home/ubuntu && ls -la /home/ubunt/
+RUN ln -sf /home/user /home/ubuntu && ls -la /home/ubuntu/
 
 USER 1000
