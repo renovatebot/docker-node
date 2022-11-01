@@ -9,7 +9,4 @@ RUN install-tool node
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/docker-node" \
       org.opencontainers.image.version="${NODE_VERSION}"
 
-# workaround for old renovate
-RUN ln -sf /home/user /home/ubuntu && ls -la /home/ubuntu/
-
 USER 1000
